@@ -76,11 +76,12 @@ setInterval(()=>{
 // =====================
 
 
-button.onclick = function(){
+button.onclick=function(){
 
     throwHeart();
 
 };
+
 
 
 
@@ -107,14 +108,12 @@ function throwHeart(){
 
 
 
-    // start from cat
-
     heart.style.left =
     "240px";
 
 
     heart.style.top =
-    "130px";
+    "110px";
 
 
 
@@ -122,15 +121,13 @@ function throwHeart(){
 
 
 
-    let y = 130;
+    let y = 110;
 
 
 
     let fall =
     setInterval(()=>{
 
-
-        // falling speed
 
         y += 4;
 
@@ -145,7 +142,6 @@ function throwHeart(){
             heart,
             fall
         );
-
 
 
 
@@ -178,7 +174,7 @@ function throwHeart(){
 
 
 // =====================
-// Catch detection
+// Catch check
 // =====================
 
 
@@ -200,19 +196,14 @@ function checkCatch(heart,fall){
 
     if(
 
-
         heartPos.bottom >= basketPos.top &&
 
-
         heartPos.left < basketPos.right &&
-
 
         heartPos.right > basketPos.left
 
 
-
     ){
-
 
 
         clearInterval(fall);
@@ -235,7 +226,7 @@ function checkCatch(heart,fall){
 
 
 
-        if(score === 10){
+        if(score===10){
 
 
 
@@ -255,7 +246,6 @@ function checkCatch(heart,fall){
 
 
     }
-
 
 
 }
