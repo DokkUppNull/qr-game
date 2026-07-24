@@ -2,7 +2,7 @@
 
 import qrcode
 
-url = "https://dokkuppnull.github.io/qr-game/"
+url = "https://dokkuppnull.github.io/qr-game/index.html"
 
 qr = qrcode.QRCode(
     version=1,
