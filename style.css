@@ -1,0 +1,235 @@
+*{
+
+    box-sizing:border-box;
+
+}
+
+
+
+body{
+
+    margin:0;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffeef3;
+
+    font-family:sans-serif;
+
+}
+
+
+
+
+
+#game{
+
+    width:500px;
+
+    height:500px;
+
+
+    background-image:
+    url("assets/background.jpg");
+
+
+    background-size:cover;
+
+
+    background-position:center;
+
+
+    border-radius:20px;
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+#counter{
+
+    text-align:center;
+
+    padding:12px;
+
+    font-size:20px;
+
+    color:white;
+
+
+    text-shadow:
+    2px 2px 4px black;
+
+}
+
+
+
+
+
+/* fixed cat */
+
+#cat{
+
+    position:absolute;
+
+
+    width:70px;
+
+
+    top:60px;
+
+
+    left:215px;
+
+}
+
+
+
+
+
+/* moving basket */
+
+#basket{
+
+    position:absolute;
+
+
+    width:60px;
+
+
+    top:310px;
+
+
+    left:220px;
+
+}
+
+
+
+
+
+/* hearts */
+
+.heart{
+
+    position:absolute;
+
+
+    width:20px;
+
+
+    z-index:5;
+
+}
+
+
+
+
+
+/* button */
+
+#throwBtn{
+
+
+    position:absolute;
+
+
+    bottom:25px;
+
+
+    left:180px;
+
+
+    width:140px;
+
+
+    padding:14px;
+
+
+
+    border:none;
+
+
+    border-radius:30px;
+
+
+    background:#ff5577;
+
+
+    color:white;
+
+
+    font-size:18px;
+
+
+
+    box-shadow:
+
+    0 4px 10px rgba(0,0,0,.3);
+
+}
+
+
+
+
+
+/* popup */
+
+
+#letter{
+
+
+    display:none;
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    background:rgba(0,0,0,.5);
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+}
+
+
+
+
+
+#letterBox{
+
+
+    width:280px;
+
+
+    padding:30px;
+
+
+    background:white;
+
+
+    border-radius:20px;
+
+
+    text-align:center;
+
+}
