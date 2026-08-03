@@ -1,9 +1,6 @@
 *{
-
     box-sizing:border-box;
-
 }
-
 
 
 body{
@@ -22,12 +19,116 @@ body{
 
     font-family:sans-serif;
 
+    overflow:hidden;
 
-    touch-action:manipulation;
+    touch-action:none;
 
 }
 
 
+
+/* =====================
+WELCOME SCREEN
+===================== */
+
+
+#startScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(255,238,243,.95);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:200;
+
+}
+
+
+
+#startBox{
+
+    width:320px;
+
+    padding:35px;
+
+    background:white;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.2);
+
+}
+
+
+
+#startBox h1{
+
+    color:#ff5577;
+
+}
+
+
+
+#welcomeText{
+
+    line-height:1.5;
+
+}
+
+
+
+
+
+#startBtn{
+
+    margin-top:20px;
+
+    width:170px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#ff5577;
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+
+
+
+
+#startBtn:active{
+
+    transform:scale(.95);
+
+}
+
+
+
+
+
+
+
+/* =====================
+GAME
+===================== */
 
 
 #game{
@@ -54,16 +155,21 @@ body{
 
     overflow:hidden;
 
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.25);
+
+
 }
 
 
 
 
 
-/* heart counter */
-
 
 #counter{
+
 
     position:absolute;
 
@@ -74,26 +180,28 @@ body{
     left:15px;
 
 
-    padding:8px 12px;
+    padding:8px 15px;
 
 
-    font-size:20px;
+    font-size:22px;
 
 
     color:white;
 
 
-    background:rgba(0,0,0,.25);
+    background:rgba(0,0,0,.35);
 
 
-    border-radius:15px;
+    border-radius:20px;
 
 
     text-shadow:
+
     2px 2px 4px black;
 
 
-    z-index:10;
+    z-index:50;
+
 
 }
 
@@ -101,127 +209,26 @@ body{
 
 
 
-/* cat higher */
+
+/* CAT */
 
 
 #cat{
 
+
     position:absolute;
 
 
-    width:70px;
-
-
-    top:35px;
+    width:75px;
 
 
     left:215px;
-
-}
-
-
-
-
-
-/* moving basket */
-
-
-#basket{
-
-    position:absolute;
-
-
-    width:60px;
-
-
-    top:310px;
-
-
-    left:220px;
-
-}
-
-
-
-
-
-/* hearts */
-
-
-.heart{
-
-    position:absolute;
-
-
-    width:20px;
-
-
-    z-index:5;
-
-}
-
-
-
-
-
-/* button */
-
-
-#throwBtn{
-
-
-    position:absolute;
 
 
     bottom:25px;
 
 
-    left:180px;
-
-
-    width:140px;
-
-
-    padding:14px;
-
-
-
-    border:none;
-
-
-    border-radius:30px;
-
-
-    background:#ff5577;
-
-
-    color:white;
-
-
-    font-size:18px;
-
-
-    box-shadow:
-
-    0 4px 10px rgba(0,0,0,.3);
-
-}
-
-
-
-
-
-button,
-img{
-
-
-    user-select:none;
-
-
-    -webkit-user-select:none;
-
-
-    -webkit-touch-callout:none;
+    z-index:20;
 
 
 }
@@ -231,7 +238,165 @@ img{
 
 
 
-/* letter popup */
+/* BASKETS */
+
+
+#basketContainer{
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+}
+
+
+
+.basket{
+
+
+    position:absolute;
+
+
+    width:65px;
+
+
+    z-index:10;
+
+
+    transition:
+
+
+    left .3s ease,
+
+    top .3s ease,
+
+    transform .3s ease;
+
+
+}
+
+
+
+
+
+
+/* HEART */
+
+
+.heart{
+
+
+    position:absolute;
+
+
+    width:28px;
+
+
+    z-index:30;
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+
+
+
+/* FLOAT TEXT */
+
+
+.floatText{
+
+
+    position:absolute;
+
+
+    font-size:28px;
+
+
+    font-weight:bold;
+
+
+    color:#ff5577;
+
+
+    animation:
+
+    floatUp 1s forwards;
+
+
+    z-index:100;
+
+
+}
+
+
+
+@keyframes floatUp{
+
+
+from{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+to{
+
+    opacity:0;
+
+    transform:translateY(-80px);
+
+}
+
+
+}
+
+
+
+
+
+
+
+#hint{
+
+    position:absolute;
+
+    bottom:1px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    color:black;
+
+    font-size:16px;
+
+    text-shadow:
+    2px 2px 5px black;
+
+    z-index:25;
+
+}
+
+
+
+
+
+
+
+/* LETTER */
 
 
 #letter{
@@ -246,7 +411,7 @@ img{
     inset:0;
 
 
-    background:rgba(0,0,0,.5);
+    background:rgba(0,0,0,.55);
 
 
     justify-content:center;
@@ -254,7 +419,12 @@ img{
 
     align-items:center;
 
+
+    z-index:300;
+
+
 }
+
 
 
 
@@ -263,7 +433,13 @@ img{
 #letterBox{
 
 
-    width:280px;
+    width:300px;
+
+
+    max-height:80vh;
+
+
+    overflow:auto;
 
 
     padding:30px;
@@ -272,9 +448,35 @@ img{
     background:white;
 
 
-    border-radius:20px;
+    border-radius:25px;
 
 
     text-align:center;
+
+
+    line-height:1.5;
+
+
+}
+
+
+
+
+
+
+@media(max-width:600px){
+
+
+#game{
+
+
+    width:95vw;
+
+
+    height:95vw;
+
+
+}
+
 
 }
