@@ -7,6 +7,8 @@ body{
 
     margin:0;
 
+    width:100vw;
+
     height:100vh;
 
     display:flex;
@@ -24,6 +26,7 @@ body{
     touch-action:none;
 
 }
+
 
 
 
@@ -54,9 +57,11 @@ WELCOME SCREEN
 
 #startBox{
 
-    width:320px;
+    width:85vw;
 
-    padding:35px;
+    max-width:350px;
+
+    padding:30px;
 
     background:white;
 
@@ -65,7 +70,6 @@ WELCOME SCREEN
     text-align:center;
 
     box-shadow:
-
     0 15px 40px rgba(0,0,0,.2);
 
 }
@@ -73,6 +77,8 @@ WELCOME SCREEN
 
 
 #startBox h1{
+
+    font-size:32px;
 
     color:#ff5577;
 
@@ -82,10 +88,11 @@ WELCOME SCREEN
 
 #welcomeText{
 
+    font-size:18px;
+
     line-height:1.5;
 
 }
-
 
 
 
@@ -94,29 +101,19 @@ WELCOME SCREEN
 
     margin-top:20px;
 
-    width:170px;
+    width:80%;
 
-    padding:15px;
+    padding:16px;
 
     border:none;
 
-    border-radius:30px;
+    border-radius:40px;
 
     background:#ff5577;
 
     color:white;
 
-    font-size:20px;
-
-}
-
-
-
-
-
-#startBtn:active{
-
-    transform:scale(.95);
+    font-size:22px;
 
 }
 
@@ -133,9 +130,12 @@ GAME
 
 #game{
 
-    width:500px;
 
-    height:500px;
+    width:min(95vw, 95vh);
+
+
+    height:min(95vw, 95vh);
+
 
 
     background-image:url("assets/background.jpg");
@@ -147,7 +147,7 @@ GAME
     background-position:center;
 
 
-    border-radius:20px;
+    border-radius:25px;
 
 
     position:relative;
@@ -158,7 +158,8 @@ GAME
 
     box-shadow:
 
-    0 10px 30px rgba(0,0,0,.25);
+    0 10px 30px rgba(0,0,0,.3);
+
 
 
 }
@@ -168,22 +169,26 @@ GAME
 
 
 
+
+/* SCORE */
+
+
 #counter{
 
 
     position:absolute;
 
 
-    top:10px;
+    top:3%;
 
 
-    left:15px;
+    left:3%;
 
 
-    padding:8px 15px;
+    padding:8px 14px;
 
 
-    font-size:22px;
+    font-size:clamp(18px,5vw,25px);
 
 
     color:white;
@@ -196,7 +201,6 @@ GAME
 
 
     text-shadow:
-
     2px 2px 4px black;
 
 
@@ -204,6 +208,7 @@ GAME
 
 
 }
+
 
 
 
@@ -219,19 +224,20 @@ GAME
     position:absolute;
 
 
-    width:75px;
+    width:15%;
 
 
-    left:215px;
+    left:42.5%;
 
 
-    bottom:25px;
+    bottom:8%;
 
 
     z-index:20;
 
 
 }
+
 
 
 
@@ -260,14 +266,13 @@ GAME
     position:absolute;
 
 
-    width:65px;
+    width:13%;
 
 
     z-index:10;
 
 
     transition:
-
 
     left .3s ease,
 
@@ -283,6 +288,8 @@ GAME
 
 
 
+
+
 /* HEART */
 
 
@@ -292,13 +299,10 @@ GAME
     position:absolute;
 
 
-    width:28px;
+    width:6%;
 
 
     z-index:30;
-
-
-    pointer-events:none;
 
 
 }
@@ -308,7 +312,48 @@ GAME
 
 
 
-/* FLOAT TEXT */
+
+/* HINT */
+
+
+#hint{
+
+
+    position:absolute;
+
+
+    bottom:1.5%;
+
+
+    width:100%;
+
+
+    text-align:center;
+
+
+    color:white;
+
+
+    font-size:clamp(14px,4vw,18px);
+
+
+    text-shadow:
+
+    2px 2px 5px black;
+
+
+    z-index:25;
+
+
+}
+
+
+
+
+
+
+
+/* FLOATING SCORE */
 
 
 .floatText{
@@ -317,7 +362,7 @@ GAME
     position:absolute;
 
 
-    font-size:28px;
+    font-size:clamp(22px,7vw,30px);
 
 
     font-weight:bold;
@@ -338,6 +383,8 @@ GAME
 
 
 
+
+
 @keyframes floatUp{
 
 
@@ -345,48 +392,22 @@ from{
 
     opacity:1;
 
-    transform:translateY(0);
+    transform:
+    translateY(0);
 
 }
+
 
 
 to{
 
     opacity:0;
 
-    transform:translateY(-80px);
+    transform:
+    translateY(-80px);
 
 }
 
-
-}
-
-
-
-
-
-
-
-#hint{
-
-    position:absolute;
-
-    bottom:1px;
-
-    left:0;
-
-    width:100%;
-
-    text-align:center;
-
-    color:black;
-
-    font-size:16px;
-
-    text-shadow:
-    2px 2px 5px black;
-
-    z-index:25;
 
 }
 
@@ -411,7 +432,8 @@ to{
     inset:0;
 
 
-    background:rgba(0,0,0,.55);
+    background:
+    rgba(0,0,0,.55);
 
 
     justify-content:center;
@@ -427,13 +449,13 @@ to{
 
 
 
-
-
-
 #letterBox{
 
 
-    width:300px;
+    width:85vw;
+
+
+    max-width:350px;
 
 
     max-height:80vh;
@@ -442,7 +464,7 @@ to{
     overflow:auto;
 
 
-    padding:30px;
+    padding:25px;
 
 
     background:white;
@@ -454,29 +476,10 @@ to{
     text-align:center;
 
 
+    font-size:16px;
+
+
     line-height:1.5;
-
-
-}
-
-
-
-
-
-
-@media(max-width:600px){
-
-
-#game{
-
-
-    width:95vw;
-
-
-    height:95vw;
-
-
-}
 
 
 }
